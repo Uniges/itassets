@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example </title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .invalid, .logout {
+        color: red;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .logout {
+        color: black;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    label {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    input {
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .label {
+        margin-bottom: 20px;
+    }
+
+    .label__submit {
+        align-self: center;
+    }
+
+    .submit {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10%;
+    }
+
+    .submit:hover {
+        cursor: pointer;
+        background-color: wheat;
+    }
+</style>
+<body>
+<div class="invalid" th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div class="logout" th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" method="post">
+    <div class="label"><label> User Name : <input type="text" name="username"/> </label></div>
+    <div class="label"><label> Password: <input type="password" name="password"/> </label></div>
+    <div class="label label__submit"><input class="submit" type="submit" value="Sign In"/></div>
+</form>
+</body>
+</html>
