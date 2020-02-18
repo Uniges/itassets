@@ -2,7 +2,6 @@ package org.eugene.itassets.service;
 
 import org.eugene.itassets.domain.*;
 import org.eugene.itassets.repository.*;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

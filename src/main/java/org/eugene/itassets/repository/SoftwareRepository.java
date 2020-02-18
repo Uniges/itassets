@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface SoftwareRepository extends JpaRepository<Software, Long> {
-    List<Software> findByName(String name);
     List<Software> findBySoftwareCategory(SoftwareCategory softwareCategory);
 }

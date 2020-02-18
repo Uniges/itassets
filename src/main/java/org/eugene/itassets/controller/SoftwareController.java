@@ -3,7 +3,6 @@ package org.eugene.itassets.controller;
 import org.eugene.itassets.domain.Software;
 import org.eugene.itassets.domain.category.SoftwareCategory;
 import org.eugene.itassets.repository.SoftwareRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,22 +22,9 @@ public class SoftwareController {
         return software;
     }
 
-    @PostMapping()
-    public Software create(@RequestBody Software software) {
-        return softwareRepository.save(software);
-    }
-
     @GetMapping("/category/{name}")
     public List<Software> categoryData(@PathVariable String name) {
         return softwareRepository.findBySoftwareCategory(SoftwareCategory.valueOf(name));
-    }
-
-    @PutMapping("{id}")
-    public Software update(
-            @PathVariable("id") Software softwareFromDb,
-            @RequestBody Software software) {
-        BeanUtils.copyProperties(software, softwareFromDb, "id");
-        return softwareFromDb;
     }
 
     @DeleteMapping("{id}")

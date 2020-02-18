@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface HardwareRepository extends JpaRepository<Hardware, Long> {
-    List<Hardware> findByName(String name);
     List<Hardware> findByHardwareCategory(HardwareCategory hardwareCategory);
 }

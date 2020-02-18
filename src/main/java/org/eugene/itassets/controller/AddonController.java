@@ -23,23 +23,9 @@ public class AddonController {
         return addon;
     }
 
-    @PostMapping()
-    public Addon create(@RequestBody Addon addon) {
-        return addonRepository.save(addon);
-    }
-
     @GetMapping("/category/{name}")
     public List<Addon> categoryData(@PathVariable String name) {
         return addonRepository.findByAddonCategory(AddonCategory.valueOf(name));
-    }
-
-
-    @PutMapping("{id}")
-    public Addon update(
-            @PathVariable("id") Addon addonFromDb,
-            @RequestBody Addon addon) {
-        BeanUtils.copyProperties(addon, addonFromDb, "id");
-        return addonFromDb;
     }
 
     @DeleteMapping("{id}")

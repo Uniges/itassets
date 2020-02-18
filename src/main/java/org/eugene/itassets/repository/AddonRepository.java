@@ -9,6 +9,5 @@ import java.util.List;
 
 @Repository
 public interface AddonRepository extends JpaRepository<Addon, Long> {
-    List<Addon> findByName(String name);
     List<Addon> findByAddonCategory(AddonCategory addonCategory);
 }
