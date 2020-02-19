@@ -27,4 +27,6 @@
 Также приложение имеет связанный с ним информационный телеграмм бот, который дублирует меню веб приложения
 и выдает пользователю информацию по запросу из контекстного меню. Авторизация не требуется.
 
-![Image alt](https://github.com/Uniges/itassets/blob/master/src/main/resources/static/img/4.jpg)
+<p align="center">
+  <img src="https://github.com/Uniges/itassets/blob/master/src/main/resources/static/img/4.jpg">
+</p>
